@@ -28,7 +28,7 @@ function displayImages(){//DISPLAY ALL IMAGES FROM images ARRAY
 
         _img.style.width = canvasWidth
         _img.style.height = canvasHeight
-
+        //
         imagesDiv.appendChild(_img)
     }
 }
