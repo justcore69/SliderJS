@@ -4,19 +4,41 @@
 
     border: 1px solid rgb(49, 49, 49);
     border-radius: 2px;
-}
 
-.images-div{
-    transition: left 5s ease;
-
-    display: flex;
+    margin-left: 100px;
 
     position: relative;
 }
 
+.images-div{
+    display: flex;
+    position: relative;
+    z-index: 1;
+
+    left: 0;
+    transition: all ease 1s;
+}
+
 .slider-div img{
-    width: 540px;
+    object-fit: cover;
+}
+
+.arrow-div{
+    width: 64px;
     height: 360px;
 
-    object-fit: cover;
+    z-index: 2;
+    position: absolute;
+
+    opacity: 0.3;
+}
+
+.left{
+    background-color: blue;
+}
+
+.right{
+    background-color: rgb(255, 0, 0);
+
+    margin-left: calc(540px - 64px);
 }
