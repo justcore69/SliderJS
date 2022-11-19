@@ -1,0 +1,22 @@
+.slider-div{
+
+    /* You can change the width and heigth in slider.js */
+
+    border: 1px solid rgb(49, 49, 49);
+    border-radius: 2px;
+}
+
+.images-div{
+    transition: left 5s ease;
+
+    display: flex;
+
+    position: relative;
+}
+
+.slider-div img{
+    width: 540px;
+    height: 360px;
+
+    object-fit: cover;
+}
