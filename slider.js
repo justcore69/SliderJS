@@ -49,6 +49,5 @@ function move(_dir){
         offset += -canvasWidth
     }
 
-    
     console.log(offset + ' | ' + _dir)
 }
