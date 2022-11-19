@@ -5,14 +5,13 @@
     border: 1px solid rgb(49, 49, 49);
     border-radius: 2px;
 
-    margin-left: 100px;
-
     position: relative;
 }
 
 .images-div{
     display: flex;
     position: relative;
+
     z-index: 1;
 
     left: 0;
@@ -29,6 +28,7 @@
     height: 360px;
 
     z-index: 2;
+
     position: absolute;
 
     opacity: 0.3;
@@ -40,6 +40,5 @@
 
 .right{
     background-color: rgb(255, 0, 0);
-
     margin-left: calc(540px - 64px);
 }
