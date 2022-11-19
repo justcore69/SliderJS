@@ -7,16 +7,10 @@
 }
 
 .images-div{
-    transition: left 5s ease;
-
     display: flex;
-
     position: relative;
 }
 
 .slider-div img{
-    width: 540px;
-    height: 360px;
-
     object-fit: cover;
 }
