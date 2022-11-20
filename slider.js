@@ -29,6 +29,7 @@ let images =
 
 //DO NOT CHANGE
 let offset = 0
+let clicked = false
 
 syncWithSize()
 displayImages()
@@ -38,6 +39,16 @@ autoSlide()
 
 sliderDiv.style.width = canvasWidth
 sliderDiv.style.height = canvasHeight
+
+arrLeft.onclick = function(){//Click on the left button
+    move('left')
+    clicked = true
+}
+
+arrRight.onclick = function(){//Click on the right button
+    move('right')
+    clicked = true
+}
 
 function displayImages(){//DISPLAY ALL IMAGES FROM images ARRAY
     for(let i = 0; i < images.length; i++){
@@ -49,6 +60,10 @@ function displayImages(){//DISPLAY ALL IMAGES FROM images ARRAY
         
         imagesDiv.appendChild(_img)
     }
+}
+
+function drowDots(){
+     
 }
 
 function syncWithSize(){//CSS SYNC WITH CANVAS SIZE
@@ -68,17 +83,16 @@ function applyCSS(){
 
 async function autoSlide(){
     if(useAutoSlide){
-        move(autoSlideSide)
-        await delay(autoSlideDelay)
-        autoSlide()
+        if(!clicked){
+            move(autoSlideSide)
+            await delay(autoSlideDelay)
+            autoSlide()
+        }else{
+            clicked = false;
+            await delay(autoSlideDelay)
+            autoSlide()
+        }
     }
-}
-
-arrLeft.onclick = function(){//Click on the left button
-    move('left')
-}
-arrRight.onclick = function(){//Click on the right button
-    move('right')
 }
 
 function move(_dir){
