@@ -24,7 +24,7 @@
 }
 
 .arrow-div{
-    width: 64px;
+    width: 128px;
     height: 360px;
 
     z-index: 2;
@@ -40,5 +40,5 @@
 
 .right{
     background-color: rgb(255, 0, 0);
-    margin-left: calc(540px - 64px);
+    margin-left: calc(540px - 128px);
 }

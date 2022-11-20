@@ -42,11 +42,24 @@ arrRight.onclick = function(){//Click on the right button
 
 function move(_dir){
     if(_dir === 'left'){
-        imagesDiv.style.left = offset + canvasWidth
-        offset += canvasWidth
-    }else if(_dir === 'right'){
-        imagesDiv.style.left = offset + -canvasWidth
-        offset += -canvasWidth
+        if(offset === 0){
+            offset = -(images.length*canvasWidth - canvasWidth)
+            imagesDiv.style.left = offset
+        }
+        else{
+            imagesDiv.style.left = offset + canvasWidth
+            offset += canvasWidth
+        }
+    }
+    else if(_dir === 'right'){
+        if(offset + -canvasWidth - canvasWidth < -images.length*canvasWidth){
+            offset = 0
+            imagesDiv.style.left = offset
+        }
+        else{
+            imagesDiv.style.left = offset + -canvasWidth
+            offset += -canvasWidth
+        }
     }
 
     console.log(offset + ' | ' + _dir)
