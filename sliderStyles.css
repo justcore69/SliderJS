@@ -57,11 +57,12 @@
 }
 
 .dot-current{
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     border-radius: 100px;
 
     margin-left: 3px;
+    margin-top: 3px;
 
     background-color: rgb(71, 71, 71);
 }

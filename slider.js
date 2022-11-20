@@ -33,13 +33,13 @@ let images =
 let offset = 0
 let clicked = false
 
+drawDots()
+
 syncWithSize()
 displayImages()
 applyCSS()
 
 autoSlide()
-
-drawDots()
 
 sliderDiv.style.width = canvasWidth
 sliderDiv.style.height = canvasHeight
@@ -82,6 +82,14 @@ function drawDots(){
 
 function changeCurrentDot(){
 
+    for(let i = 0; i < images.length; i++){
+        document.getElementById('dot' + (i+1)).innerHTML = ''
+    }
+
+    const _dot = document.getElementById('dot' + (-(offset/canvasWidth)+1))
+    let _currDot = document.createElement('div')
+    _currDot.classList = 'dot-current'
+    _dot.appendChild(_currDot)
 }
 
 function syncWithSize(){
