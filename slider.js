@@ -5,6 +5,8 @@ const imagesDiv = document.querySelector('.images-div')
 const arrLeft = document.querySelector('.left')
 const arrRight = document.querySelector('.right')
 
+const dotsDiv = document.querySelector('.dots-div')
+
 //SLIDER CANVAS SIZE
 const canvasWidth = 540
 const canvasHeight = 360
@@ -14,12 +16,12 @@ const canvasHeight = 360
 let useOverflowHidden = true //Hide images if it's outside the slider container
 
 let useAutoSlide = true //Automatic slide switching
-let autoSlideDelay = 3 //Delay between switching slides in seconds (Don't works if useAutoSlide = false)
+let autoSlideDelay = 4 //Delay between switching slides in seconds (Don't works if useAutoSlide = false)
 let autoSlideSide = 'right' //'left' or 'right'
 
-let showDots = true; //Show dots under the slider
+let showDots = true //Show dots under the slider
 
-let slideAnimationSpeed = 1 //Slide animation speed
+let slideAnimationDuration = 1 //Slide animation duration
 
 //------------------
 
@@ -37,6 +39,8 @@ applyCSS()
 
 autoSlide()
 
+drawDots()
+
 sliderDiv.style.width = canvasWidth
 sliderDiv.style.height = canvasHeight
 
@@ -52,7 +56,7 @@ arrRight.onclick = function(){//Click on the right button
 
 function displayImages(){//DISPLAY ALL IMAGES FROM images ARRAY
     for(let i = 0; i < images.length; i++){
-        let _img = document.createElement('img');
+        let _img = document.createElement('img')
         _img.src = images[i]
 
         _img.style.width = canvasWidth
@@ -62,15 +66,32 @@ function displayImages(){//DISPLAY ALL IMAGES FROM images ARRAY
     }
 }
 
-function drowDots(){
-     
+function drawDots(){
+    let dotsDivWidth = 0
+    if(showDots){
+        for(let i = 0; i < images.length; i++){
+            let _dot = document.createElement('div')
+            _dot.classList = 'dot'
+            _dot.id = 'dot' + (i + 1)
+            dotsDiv.appendChild(_dot)
+            dotsDivWidth += 16 + 3;
+        }
+    }
+    dotsDiv.style.marginLeft = ((canvasWidth/2) - dotsDivWidth/2) + 'px'
 }
 
-function syncWithSize(){//CSS SYNC WITH CANVAS SIZE
+function changeCurrentDot(){
+
+}
+
+function syncWithSize(){
     const arrows = document.querySelectorAll('.arrow-div')
     arrows.forEach((arr) => {arr.style.height = canvasHeight})
     const right = document.querySelector('.right')
     right.style.left = canvasWidth - canvasWidth / 100 * 25
+
+    document.querySelectorAll('.arrow-img')[0].style.paddingTop = (canvasHeight/2 - 25) + 'px'
+    document.querySelectorAll('.arrow-img')[1].style.paddingTop = (canvasHeight/2 - 25) + 'px'
 }
 
 function applyCSS(){
@@ -79,8 +100,10 @@ function applyCSS(){
     }else{
         sliderDiv.style.overflow = 'visible'
     }
-}
 
+    imagesDiv.style.transitionDuration = slideAnimationDuration + 's'
+}
+ 
 async function autoSlide(){
     if(useAutoSlide){
         if(!clicked){
@@ -117,9 +140,11 @@ function move(_dir){
         }
     }
 
+    changeCurrentDot()
+
     //console.log(offset + ' | ' + _dir)
 }
 
 function delay(time) {
-    return new Promise(resolve => setTimeout(resolve, time * 1000));
+    return new Promise(resolve => setTimeout(resolve, time * 1000))
 }

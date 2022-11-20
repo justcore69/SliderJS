@@ -28,15 +28,20 @@
 
     z-index: 2;
     position: absolute;
-    opacity: 0.3;
+    opacity: 0.9;
+}
+
+.arrow-div img{
+    width: 50px;
+    height: auto;
 }
 
 .left{
-    background-color: blue;
+    padding-left: 10px;
 }
 
 .right{
-    background-color: rgb(255, 0, 0);
+    padding-left: 75px;
 }
 
 .dot{
@@ -44,11 +49,24 @@
     height: 16px;
     border-radius: 100px;
 
+    margin-left: 3px;
+
     background-color: rgb(168, 168, 168);
 
     display: inline-block;
 }
 
+.dot-current{
+    width: 8px;
+    height: 8px;
+    border-radius: 100px;
+
+    margin-left: 3px;
+
+    background-color: rgb(71, 71, 71);
+}
+
 .dots-div{
+    margin-top: 10px;
     display: inline-block;
 }
