@@ -1,3 +1,8 @@
+/*
+- Thanks for using SliderJS
+- If my repo was useful, you can star it on my GitHub @JustAnCore
+*/
+
 //ELEMENTS
 const sliderDiv = document.querySelector('.slider-div')
 const imagesDiv = document.querySelector('.images-div')
@@ -67,8 +72,9 @@ function displayImages(){//DISPLAY ALL IMAGES FROM images ARRAY
 }
 
 function drawDots(){
-    let dotsDivWidth = 0
     if(showDots){
+        let dotsDivWidth = 0
+
         for(let i = 0; i < images.length; i++){
             let _dot = document.createElement('div')
             _dot.classList = 'dot'
@@ -76,20 +82,22 @@ function drawDots(){
             dotsDiv.appendChild(_dot)
             dotsDivWidth += 16 + 3;
         }
+
+        //dotsDiv.style.marginLeft = ((canvasWidth/2) - dotsDivWidth/2) + 'px'
     }
-    dotsDiv.style.marginLeft = ((canvasWidth/2) - dotsDivWidth/2) + 'px'
 }
 
 function changeCurrentDot(){
-
-    for(let i = 0; i < images.length; i++){
-        document.getElementById('dot' + (i+1)).innerHTML = ''
+    if(showDots){
+        for(let i = 0; i < images.length; i++){
+            document.getElementById('dot' + (i+1)).innerHTML = ''
+        }
+    
+        const _dot = document.getElementById('dot' + (-(offset/canvasWidth)+1))
+        let _currDot = document.createElement('div')
+        _currDot.classList = 'dot-current'
+        _dot.appendChild(_currDot)
     }
-
-    const _dot = document.getElementById('dot' + (-(offset/canvasWidth)+1))
-    let _currDot = document.createElement('div')
-    _currDot.classList = 'dot-current'
-    _dot.appendChild(_currDot)
 }
 
 function syncWithSize(){
