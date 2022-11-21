@@ -24,4 +24,4 @@ let slideAnimationDuration = 1 //Slide animation duration
 
 ```
 
-![Screenshot](https://github.com/JustAnCore/SliderJS/images/github/screenshot.png)
+![Screenshot](https://github.com/JustAnCore/SliderJS/blob/master/images/github/screenshot.png)
