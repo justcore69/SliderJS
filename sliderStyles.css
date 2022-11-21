@@ -17,14 +17,16 @@
 }
 
 .slider-main-container{
-    width: 720px;
-    height: 450px;
+    width: 100%;
+    min-height: 450px;
 
     background-color: rgb(223, 223, 223);
     border: 1px solid rgb(223, 223, 223);
     border-radius: 3px;
 
     margin: 0 auto;
+
+    overflow: hidden;
 }
 
 .slider-div img{
@@ -37,7 +39,7 @@
 
     z-index: 2;
     position: absolute;
-    opacity: 0.9;
+    opacity: 0.7;
 }
 
 .arrow-div img{

@@ -18,7 +18,7 @@ const canvasHeight = 360
 
 //-----SETTINGS-----
 
-let useOverflowHidden = true //Hide images if it's outside the slider container
+let useOverflowHidden = false //Hide images if it's outside the slider container
 
 let useAutoSlide = true //Automatic slide switching
 let autoSlideDelay = 4 //Delay between switching slides in seconds (Don't works if useAutoSlide = false)
