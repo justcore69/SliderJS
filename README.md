@@ -4,7 +4,8 @@ Try it online: [SliderJS](https://justancore.github.io/SliderJS/)
 
 A simple slider written in javascript without the use of third-party libraries
 
-You can easily change settings through slider.js for better look
+You can upload as many photos of different sizes as you like and the slider will display them correctly
+Also you can easily change settings through slider.js for better look
 
 ```javascript
 
